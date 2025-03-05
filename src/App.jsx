@@ -9,6 +9,7 @@ export default function App() {
       <HeroSection />
       <About />
       <Skills />
+      <Work />
     </main>
   );
 }
@@ -62,6 +63,39 @@ function About() {
   );
 }
 
+function Work() {
+  return (
+    <section id="about" className="scroll-mt-30">
+      <div className="mt-35 flex flex-col justify-center items-center px-5 md:px-10 lg:px-20 xl:px-40 ">
+        <Title value={"My latest work"} />
+        <div className="grid grid-cols-2 w-full">
+          <WorkCard />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+import { Github } from "lucide-react";
+
+function WorkCard() {
+  return (
+    <div className="text-[18px] sm:text-2xl  text-gray-800 bg-gray-50 p-10 rounded-2xl">
+      <h3 className="font-semibold text-black">Project title</h3>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus
+        natus ad maxime labore. Voluptas quos, deleniti temporibus porro ipsam
+        omnis at veniam reprehenderit voluptates recusandae delectus suscipit
+        aliquid laudantium rerum!
+      </p>
+      <button className="bg-black p-2 rounded-[0.8em] text-gray-300">
+        <Github />
+        Source
+      </button>
+    </div>
+  );
+}
+
 function Skills() {
   let my_skills = [
     "Dart",
@@ -104,8 +138,8 @@ function Skills() {
 
 function SkillCard({ value }) {
   return (
-    <div className="bg-black py-3 px-5 rounded-[0.8em] text-center cursor-pointer mx-1 ">
-      <span className="text-[18px] sm:text-2xl text-gray-400 ">{value}</span>
+    <div className="bg-gray-50 py-3 px-5 rounded-[0.8em] text-center cursor-pointer mx-1 ">
+      <span className="text-[18px] sm:text-2xl  text-gray-800 ">{value}</span>
     </div>
   );
 }
